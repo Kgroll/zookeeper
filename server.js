@@ -4,6 +4,7 @@ const express = require('express');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+app.use(express.static('public'));
 //parse incoming string or array data
 app.use(express.urlencoded({ extended: true}));
 //parse incoming JSON data
@@ -110,6 +111,9 @@ app.post('/api/animals', (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
 
 
 app.listen(PORT, () => {
