@@ -17,16 +17,17 @@ const handleAnimalFormSubmit = event => {
 
   if (diet === undefined) {
     diet = '';
-  }
+  
 
   const selectedTraits = $animalForm.querySelector('[name="personality"').selectedOptions;
   const personalityTraits = [];
   for (let i = 0; i < selectedTraits.length; i += 1) {
     personalityTraits.push(selectedTraits[i].value);
   }
+};
   const animalObject = { name, species, diet, personalityTraits };
 
-};
+
 
 $animalForm.addEventListener('submit', handleAnimalFormSubmit);
 
@@ -46,4 +47,4 @@ fetch('/api/animals', {
 .then(postResponse => {
   console.log(postResponse);
   alert('Thank you for adding an animal!')
-});
+});}
