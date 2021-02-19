@@ -77,7 +77,7 @@ function validateAnimal(animal) {
         return false;
     }
     if (!animal.personalityTraits || !Array.isArray(animal.personalityTraits)) {
-        return falxe;
+        return false;
     }
     return true;
 }
